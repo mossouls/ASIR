@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p2_2</title>
+    <style>
+        div{
+            border:black solid 1px;
+            padding-left: 0.5em;
+        }
+        .d1{
+            background-color: lightpink;
+        }
+        .d2{
+            background-color: lightblue;
+        }
+        span{
+            background-color: white;
+            border: 2px solid black;
+            padding: 0.2em;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        function complete(){
+            var gasolina,diesel,hibrido,p3,p5,pfam,rojo,verde,naranja,blanco,negro,metalizada,llantas,climatizador,gps,dvd;
+
+                    gasolina=document.formulario.motor[0].checked;
+                    diesel=document.formulario.motor[1].checked;
+                    hibrido=document.formulario.motor[2].checked;
+
+                    p3=document.formulario.puertas[0].checked;
+                    p5=document.formulario.puertas[1].checked;
+                    pfam=document.formulario.puertas[2].checked;
+
+                    rojo=document.formulario.pintura[0].checked;
+                    verde=document.formulario.pintura[1].checked;
+                    naranja=document.formulario.pintura[2].checked;
+                    blanco=document.formulario.pintura[3].checked;
+                    negro=document.formulario.pintura[4].checked;
+
+                    metalizada=document.getElementById('metalizada').checked;
+                    llantas=document.getElementById('llantas').checked;
+                    clima=document.getElementById('clima').checked;
+                    gps=document.getElementById('gps').checked;
+                    dvd=document.getElementById('dvd').checked;
+
+                    if ((gasolina==false && diesel==false && hibrido==false)||(rojo==false&&verde==false&&naranja==false&&negro==false&&blanco==false)||(p3==false&&p5==false&&pfam==false)){
+                        return 0;
+                    }
+                    else{
+                        return 1;
+                    }
+        }
+
+ 
+        function check() {
+            var inicio, base, gasolina,diesel,hibrido,p3,p5,pfam,rojo,verde,naranja,blanco,negro,metalizada,llantas,climatizador,gps,dvd;
+            inicio=complete();
+            base=12000;
+            
+            gasolina=document.formulario.motor[0].checked;
+            diesel=document.formulario.motor[1].checked;
+            hibrido=document.formulario.motor[2].checked;
+
+            p3=document.formulario.puertas[0].checked;
+            p5=document.formulario.puertas[1].checked;
+            pfam=document.formulario.puertas[2].checked;
+
+            rojo=document.formulario.pintura[0].checked;
+            verde=document.formulario.pintura[1].checked;
+            naranja=document.formulario.pintura[2].checked;
+            blanco=document.formulario.pintura[3].checked;
+            negro=document.formulario.pintura[4].checked;
+
+            metalizada=document.getElementById('metalizada').checked;
+            llantas=document.getElementById('llantas').checked;
+            clima=document.getElementById('clima').checked;
+            gps=document.getElementById('gps').checked;
+            dvd=document.getElementById('dvd').checked;
+
+            if (inicio==0) {
+                return String('No has seleccionado las opciones necesarias para evalúar un precio total.');
+            }
+
+            if (gasolina==true) {
+                base=base;
+            }
+
+            if (diesel==true) {
+                base=base+1500;
+            }
+
+            if (hibrido==true) {
+                base=base+3000;
+            }
+
+            if (p3==true && (diesel==true || hibrido==true)) {
+                base=String('El modelo de 3 puertas sólo está disponible para gasolina');
+            }
+
+            if (p3==true && gasolina==true){
+                base=base-2000;
+            }
+
+            if (pfam==true && (gasolina==true || diesel==true || hibrido==true)) {
+                base=base+1500;
+            }
+
+            if ((gasolina==true || diesel==true || hibrido==true)&&(p3==true || p5==true || pfam==true)&&(rojo==true||verde==true||naranja==true)) {
+                base=base;
+            }
+
+            if ((gasolina==true || diesel==true || hibrido==true)&&(p3==true || p5==true || pfam==true)&&(blanco==true)) {
+                base=base-500;
+            }
+
+            if ((gasolina==true || diesel==true || hibrido==true)&&(p3==true || p5==true || pfam==true)&&(negro==true)) {
+                base=base-600;
+            }
+
+            if ((gasolina==true || diesel==true || hibrido==true)&&(p3==true || p5==true || pfam==true)&&(rojo==true||verde==true||naranja==true)&&(metalizada==true)) {
+                base=base+750;
+            }
+
+            if ((gasolina==true || diesel==true || hibrido==true)&&(p3==true || p5==true || pfam==true)&&(blanco==true||negro==true)&&(metalizada==true)) {
+                base=String('La opción "metalizada" no está disponible para modelos con pintura blanca o negra');
+            }
+
+             if ((gasolina==true || diesel==true || hibrido==true)&&(p3==true || p5==true || pfam==true)&&(rojo==true||verde==true||naranja==true||blanco==true||negro==true)&&(llantas==true)) {
+                base=base+200;
+            }              
+
+             if ((gasolina==true || diesel==true || hibrido==true)&&(p3==true || p5==true || pfam==true)&&(rojo==true||verde==true||naranja==true||blanco==true||negro==true)&&(clima==true)) {
+                base=base+800;
+            }   
+
+             if ((gasolina==true || diesel==true || hibrido==true)&&(p3==true || p5==true || pfam==true)&&(rojo==true||verde==true||naranja==true||blanco==true||negro==true)&&(gps==true)) {
+                base=base+340;
+            }   
+
+             if ((gasolina==true || diesel==true || hibrido==true)&&(pfam==true)&&(rojo==true||verde==true||naranja==true||blanco==true||negro==true)&&(dvd==true)) {
+                base=base+800;
+            }
+
+             if ((gasolina==true || diesel==true || hibrido==true)&&(!pfam==true)&&(rojo==true||verde==true||naranja==true||blanco==true||negro==true)&&(dvd==true)) {
+                base=String('La opción "DVD" sólo está disponible para el modelo familiar');
+            }      
+
+            return base
+        }
+
+        function result() {
+            var base=check();
+            document.getElementById('total').innerHTML=base;
+        }
+
+    </script>
+
+    <form action="" name="formulario">
+        <div>
+            <p>Configuración del Coche</p>
+        </div>
+
+        <div class="d1">
+            <p>Tipo de motor</p>
+            <p>
+                <label for="">
+                    <input type="radio" name="motor" id="motor" value="">Gasolina
+                </label>
+
+                <label for="">
+                    <input type="radio" name="motor" id="motor" value="">Diesel (+1500€)
+                </label>
+
+                <label for="">
+                    <input type="radio" name="motor" id="motor" value="">Híbrido (+3000€)
+                </label>
+            </p>
+        </div>
+
+        <div class="d2">
+            <p>Tipo de Puertas</p>
+            <p>
+                <label for="">
+                    <input type="radio" name="puertas" id="puertas" value="">3 Puertas (-2000€) (Sólo con Gasolina)
+                </label>
+
+                <label for="">
+                    <input type="radio" name="puertas" id="puertas" value="">5 Puertas
+                </label>
+
+                <label for="">
+                    <input type="radio" name="puertas" id="puertas" value="">Familiar (+1500€)
+                </label>
+            </p>
+        </div>
+
+        <div class="d1">
+            <p>Tipo de Pintura</p>
+            <p>
+                <label for="">
+                    <input type="radio" name="pintura" id="pintura" value="">Rojo
+                </label>
+
+                <label for="">
+                    <input type="radio" name="pintura" id="pintura" value="">Verde
+                </label>
+
+                <label for="">
+                    <input type="radio" name="pintura" id="pintura" value="">Naranja
+                </label>
+
+                <label for="">
+                    <input type="radio" name="pintura" id="pintura" value="">Blanco (-500€)
+                </label>
+
+                <label for="">
+                    <input type="radio" name="pintura" id="pintura" value="">Negro (-600€)
+                </label>
+            </p>
+        </div>
+
+        <div class="d2">
+            <p>Seleccionar las que se deseen:</p>
+            <p>
+                   <input type="checkbox" name="metalizada" id="metalizada">Metalizada (+750€) (Solo Rojo, Verde o Naranja) <br>
+                   <input type="checkbox" name="llantas" id="llantas">Llantas(+200€) <br>
+                   <input type="checkbox" name="clima" id="clima">Climatizador(+800€) <br>
+                   <input type="checkbox" name="gps" id="gps">GPS(+340€) <br>
+                   <input type="checkbox" name="dvd" id="dvd">DVD(+800€) (Solo modelo Familiar) <br>
+            </p>
+        </div>
+    </form>
+
+    <div class="d1">
+        <p>Total a Cobrar</p>
+        <p>
+            <button id="calc" onclick="check();complete();result()">Calcular</button>
+        </p>
+        <p>
+            <span id="total"></span>
+        </p>
+    </div>
+
+</body>
+</html>

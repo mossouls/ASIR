@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>p2_4</title>
+	<style type="text/css">
+
+		h1{
+			color: blue;
+			background-color: orange;
+			font-weight: normal;
+			font-size: 4vw;
+		}
+
+		section{
+			background-color: yellow;
+			border: 5px solid black;
+			font-family: verdana;
+		}
+
+		form div{
+			display: inline-block;
+		}
+
+		form p{
+			height: 3vw;
+			margin-right: 1em;
+			margin-left: 5px;
+			margin-top: 0.2vw;
+			margin-bottom: 0.4vw;
+			font-size: 2vw;
+			
+		}
+
+		input[type=text]{
+			width: 45%;
+			height: 2vw;
+		}
+
+		select{
+			width: 23%;
+			height: 2.5vw;
+			font-size: 1.5vw;
+			margin-top: 0.2vw;
+		}
+
+		input[type="submit"], input[type="reset"] {
+			margin-top: 1vw;
+			background: none;
+			color: blue;
+			text-decoration: underline;
+			border: none;
+			padding: 0;
+			font: inherit;
+			cursor: pointer;
+			outline: inherit;
+			font-size: 2.5vw;
+		}
+
+
+	</style>
+
+	<script type="text/javascript">
+
+		function completo() {
+			var nombre,apellido1,apellido2,email,provincia,ss1,ss2;
+				nombre=document.formulario.nombre.value;
+				apellido1=document.formulario.ap1.value;
+				apellido2=document.formulario.ap2.value;
+				email=document.formulario.mail.value;
+				provincia=document.formulario.prov.value;
+				ss1=document.formulario.ss1.value;
+				ss2=document.formulario.ss2.value;
+
+
+			if (nombre==''||apellido1==''||apellido2==''||email==''||ss1==''||ss2=='') {
+					alert('Faltan datos para completar el formulario.');
+			}
+
+			if (email.indexOf('@')==-1 && !(email=='')) {
+				alert('El formato del correo electrónico no es válido.');
+			}
+
+			if (isNaN(ss1)==true) {
+				alert('El 1er Número de SS debe ser un número.');
+			}
+
+			if ((ss1<1000000||ss1>9999999)&&isNaN(ss1)==false) {
+				alert('El 1er Número de SS debe ser un número de 7 digitos.');
+			}
+
+			if ((ss2<0||ss2>99)&&(isNaN(ss2)==false)) {
+				alert('El 2º Número de SS debe ser un número de 1 o 2 digitos.');
+			}
+
+			if (isNaN(ss1)==true) {
+				alert('El 2o número de SS debe ser un número.');
+			}
+
+		}
+	</script>
+</head>
+
+<body>
+
+	<h1>Solicitud del Informe de Vida Laboral</h1>
+
+	<form name="formulario">
+
+		<section>
+
+				<div>
+					<p align="center">Nombre:</p>
+					<p align="center">Primer Apellido:</p>
+					<p align="center">Segundo Apellido:</p>
+					<p align="center">Correo Electrónico:</p>
+					<p align="center">Número de afiliado a la S.S.:</p>
+				</div>
+				<div>
+					<p><input type="text" name="nombre"></p>
+					<p><input type="text" name="ap1"></p>
+					<p><input type="text" name="ap2"></p>
+					<p><input type="text" name="mail"></p>
+					<p><select name="prov">
+						<option>A CORUÑA</option>
+						<option>MADRID</option>
+						<option>PONTEVEDRA</option>
+						<option>ALICANTE</option>
+						<option>SALAMANCA</option>
+						<option>JAÉN</option>
+					</select>
+					/ <input type="text" name="ss1" style="width: 10%;">
+					/ <input type="text" name="ss2" style="width: 7%;">
+					</p>			
+				</div>
+
+		</section>
+
+					<input type="submit" name="enviar" value="Envíar" onclick="completo()">
+					<input type="reset" name="borrar" value="Borrar">	
+
+	</form>
+
+</body>
+</html>

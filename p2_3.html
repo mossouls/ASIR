@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>p2_3</title>
+	</head>
+
+	<style type="text/css">
+		body{
+			font-family: arial;
+			font-size: 2vw;
+		}
+
+		div{
+			margin-top: 2em;
+			padding: 3px;
+			background-color: #F2F3F4;
+			border-radius: 0.5vw;
+		}
+		button{
+			box-shadow:inset 0px 1px 3px 0px #91b8b3;
+			background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+			background-color:#768d87;
+			border-radius:5px;
+			border:1px solid #566963;
+			display:inline-block;
+			cursor:pointer;
+			color:#ffffff;
+			font-family:Arial;
+			font-size:15px;
+			font-weight:bold;
+			padding:11px 23px;
+			text-decoration:none;
+			text-shadow:0px -1px 0px #2b665e;	
+			margin-top: 1vw;
+			margin-left: 45%;		
+		}
+
+		button:hover{
+				background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+				background-color:#6c7c7c;			
+		}
+
+		button:active{
+				position:relative;
+				top:1px;			
+		}
+
+	</style>
+
+	<script type="text/javascript">
+
+		function correct(){
+			var contador,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10;
+				contador=0;
+				p1=document.formulario.p1[2].checked;
+				p2=document.formulario.p2[3].checked;
+				p3=document.formulario.p3[0].checked;
+				p4=document.formulario.p4[1].checked;
+				p5=document.formulario.p5[2].checked;
+				p6=document.formulario.p6[1].checked;
+				p7=document.formulario.p7[1].checked;
+				p8=document.formulario.p8[3].checked;
+				p9=document.formulario.p9[1].checked;
+				p10=document.formulario.p10[1].checked;
+
+			var array=[p1,p2,p3,p4,p5,p6,p7,p8,p9,p10];
+
+				for (var i of array) {
+					if (i==true) {
+						contador=contador+1;
+					}
+					else{
+						contador=contador-0.5;
+					}
+				}
+
+			return contador;
+
+		}
+
+		function show(){
+			var nota;
+			nota=correct();
+			alert('Has sacado '+nota);
+
+			
+		}
+	</script>
+
+	<body>
+		<form method="get" name='formulario'>
+			<div>
+				<p>¿Cuál de los siguientes elementos no se considera que sea un marcado semántico?</p>
+				<p>Seleccione una:<br/>
+					<input type="radio" name="p1"> a.article <br/>
+					<input type="radio" name="p1"> b.section<br/>
+					<input type="radio" name="p1"> c.div<br/>
+					<input type="radio" name="p1"> d.aside<br/>	
+				</p>	
+			</div>
+
+			<div>
+				<p>Está creando una característica de búsqueda que usa un marcado de formulario web para su sitio web. Cuanso un usuario abre la página por primera vez, desea que el cursor del usuario aparezca en el campo Buscar de manera automática. ¿Qué atributo de entrada debe usar?</p>
+				<p>Seleccione una:<br/>
+					<input type="radio" name="p2"> a.formmethod<br/>
+					<input type="radio" name="p2"> b.placeholder<br/>
+					<input type="radio" name="p2"> c.form<br/>
+					<input type="radio" name="p2"> d.autofocus	<br/>	
+				</p>	
+			</div>
+
+			<div>
+				<p>Desea agregar un título antes de una tabla HTML, que aparecerá sólo una vez. ¿Qué etiqueta usa?<br/>
+				<p>Seleccione una:<br/>
+					<input type="radio" name="p3"> a.&lt;caption&gt;<br/>
+					<input type="radio" name="p3"> b.&lt;colgroup&gt;<br/>
+					<input type="radio" name="p3"> c.&lt;title&gt;<br/>
+					<input type="radio" name="p3"> d.&lt;thead&gt;<br/>
+				</p>
+			</div>
+
+			<div>
+				<p>¿Cuál es la forma correcta de escribir un comentario en HTML?<br/>
+				<p>Seleccione una:<br/>
+					<input type="radio" name="p4"> a./* */<br/>
+					<input type="radio" name="p4"> b.&lt;!–--…--–&gt;<br/>
+					<input type="radio" name="p4"> c.ctrl + Ç<br/>
+					<input type="radio" name="p4"> d.<¡–…–><br/>
+				</p>
+				
+			</div>
+
+			<div>
+				<p>¿Qué significa el acrónimo HTML?<br/>
+				<p>Seleccione una:<br/>
+					<input type="radio" name="p5"> a.Hyper Text Mask Language<br/>
+					<input type="radio" name="p5"> b.Hard Text Markup Language<br/>
+					<input type="radio" name="p5"> c.Hyper Text Markup Language<br/>
+					<input type="radio" name="p5"> d.Hard Text Mask Language	<br/>
+				</p>	
+			</div>
+
+			<div>
+				<p>¿Qué etiqueta es correcta para indicar un salto de línea?<br/>
+				<p>Seleccione una:<br/>
+					<input type="radio" name="p6"> a.&lt;/br&gt;<br/>
+					<input type="radio" name="p6"> b.&lt;br/&gt;<br/>
+					<input type="radio" name="p6"> c.&lt;breakLine&gt;<br/>
+					<input type="radio" name="p6"> d.&lt;hr&gt;	<br/>		
+			</div>
+
+			<div>
+				<p>¿Qué versión de html soporta la etiqueta &lt;video&gt;?<br/>
+				<p>Seleccione una:<br/>
+					<input type="radio" name="p7"> a.De HTML 3.2 en adelante<br/>
+					<input type="radio" name="p7"> b.HTML5<br/>
+					<input type="radio" name="p7"> c.HTML4<br/>
+					<input type="radio" name="p7"> d.Todas las versiones de HTML<br/>
+				</p>
+			</div>
+
+			<div>
+				<p>En relación al HTML5 elige la opción verdadera.<br/>
+				<p>Seleccione una:<br/>
+					<input type="radio" name="p8"> a.Todas las etiquetas se deben escribir en minúscula a excepción de las etiquetas &lt;html&gt;, &lt;head&gt;,&lt;title&gt; y &lt;body&gt;<br/>
+					<input type="radio" name="p8"> b.Todas las etiquetas tienen instrucción de apertura e instrucción de cierre obligatoriamente<br/>
+					<input type="radio" name="p8"> c.El estándar de html5 oficial todavía no ha sido publicado por el w3c<br/>
+					<input type="radio" name="p8"> d.Ninguna es cierta	<br/>
+				</p>		
+			</div>
+
+			<div>
+				<p>¿Qué etiqueta utilizamos para definir el cuerpo del documento?<br/>
+				<p>Seleccione una:<br/>
+					<input type="radio" name="p9"> a.background<br/>
+					<input type="radio" name="p9"> b.body<br/>
+					<input type="radio" name="p9"> c.b<br/>
+					<input type="radio" name="p9"> d.big	<br/>
+				</p>
+			</div>
+
+			<div>
+				<p>El title se encuentra dentro del body en una página web<br/>
+				<p>Seleccione una:<br/>
+					<input type="radio" name="p10"> a.Verdadero<br/>
+					<input type="radio" name="p10"> b.Falso	<br/>	
+				</p>
+			</div>
+
+		</form>
+
+		<button onclick="correct();show()">Envíar</button>
+
+	</body>
+
+</html>

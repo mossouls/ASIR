@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p2_1</title>
+    <style>
+        div{
+            width: 30%;
+            height: 10em;
+            background-color: red;border-radius: 1em;
+
+        }
+        p{
+            text-align: center;
+            font-size: 1.5em;
+        }
+        button{
+            display: block;
+            margin: 1em;
+        }
+    </style>
+    <script>
+        function cfondo() {
+            ncolor=prompt('Introduce un color del cuadro ');
+            document.getElementById('cuadro').style.backgroundColor=ncolor;
+        }
+        function ctext(){
+            tfont=prompt('Introduce la fuente: ');
+            tcol=prompt('Introduce el color de letra: ');
+            document.getElementById('texto').innerHTML='<font face='+tfont+ ' color='+tcol+'>Este es el contenido de div1</font>';
+        }
+        function ccont(){
+            tcont=prompt('Introduce el texto interior: ');
+            document.getElementById('texto').innerHTML=tcont;
+        }
+    </script>
+</head>
+<body>
+    <div id="cuadro">
+        <p id="texto">Este es el contenido de div1</p>
+    </div>
+    
+    
+    <button onclick="ccont()">Cambiar texto</button>
+    
+    <button onclick="cfondo()">Cambiar color de fondo</button>
+    
+    <button onclick="ctext()">Cambiar tipo y color de letra</button>
+</body>
+</html>
