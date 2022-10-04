@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>p2_5</title>
+</head>
+<style type="text/css">
+	button{
+		margin:3px;
+		width: 3em;
+		height: 2em;
+		border-radius: 0.5em;
+	}
+
+	table{
+		background-color: lightblue;
+		border-radius: 0.5em;
+		border:solid lightblue 3px;
+	}
+
+	#texto{
+		height: 1em;
+		width: 100%;
+		border:2px solid black;
+		background-color: white;
+		border-radius: 0.5em;
+	}
+</style>
+
+<body onload="calculadora()">
+
+
+
+
+
+
+
+	<table>
+		<tr>
+			<td colspan="4" id='texto'><span id='salida'></span></td>
+		</tr>
+		<tr>
+			<td><button id="uno">1</button></td>
+			<td><button id="dos">2</button></td>
+			<td><button id="tres">3</button></td>
+			<td><button id="suma">+</button></td>
+		</tr>
+		<tr>
+			<td><button id="cuatro">4</button></td>
+			<td><button id="cinco">5</button></td>
+			<td><button id="seis">6</button></td>
+			<td><button id="resta">-</button></td>
+		</tr>
+		<tr>
+			<td><button id="siete">7</button></td>
+			<td><button id="ocho">8</button></td>
+			<td><button id="nueve">9</button></td>
+			<td><button id="multiplicacion">x</button></td>
+		</tr>
+		<tr>
+			<td><button id="reset">c</button></td>
+			<td><button id="cero">0</button></td>
+			<td><button id="igual">=</button></td>
+			<td><button id="division">/</button></td>
+		</tr>
+
+	</table>
+
+		<!------------------------------------------------------------------->
+
+			<script type="text/javascript">
+
+				//Añadimos los parámetros que va a tener que introducir el usuario como variable
+				var num1,num2,operacion;
+
+				function calculadora(){
+				  //almacenamos los botones como variables
+				  var salida = document.getElementById('salida');
+				  var reset = document.getElementById('reset');
+				  var suma = document.getElementById('suma');
+				  var resta = document.getElementById('resta');
+				  var multiplicacion = document.getElementById('multiplicacion');
+				  var division = document.getElementById('division');
+				  var igual = document.getElementById('igual');
+				  var uno = document.getElementById('uno');
+				  var dos = document.getElementById('dos');
+				  var tres = document.getElementById('tres');
+				  var cuatro = document.getElementById('cuatro');
+				  var cinco = document.getElementById('cinco');
+				  var seis = document.getElementById('seis');
+				  var siete = document.getElementById('siete');
+				  var ocho = document.getElementById('ocho');
+				  var nueve = document.getElementById('nueve');
+				  var cero = document.getElementById('cero');
+				}
+						
+					//concatenamos las variables que el usuario introduzca antes y después del signo
+				uno.onclick = function(e){
+				      salida.textContent = salida.textContent  + "1";
+				  }
+				  dos.onclick = function(e){
+				      salida.textContent = salida.textContent  + "2";
+				  }
+				  tres.onclick = function(e){
+				      salida.textContent = salida.textContent  + "3";
+				  }
+				  cuatro.onclick = function(e){
+				      salida.textContent = salida.textContent  + "4";
+				  }
+				  cinco.onclick = function(e){
+				      salida.textContent = salida.textContent  + "5";
+				  }
+				  seis.onclick = function(e){
+				      salida.textContent = salida.textContent  + "6";
+				  }
+				  siete.onclick = function(e){
+				      salida.textContent = salida.textContent  + "7";
+				  }
+				  ocho.onclick = function(e){
+				      salida.textContent = salida.textContent  + "8";
+				  }
+				  nueve.onclick = function(e){
+				      salida.textContent = salida.textContent  + "9";
+				  }
+				  cero.onclick = function(e){
+				      salida.textContent = salida.textContent  + "0";
+				  }
+				  reset.onclick = function(e){
+				      resetear();
+				  }
+				  suma.onclick = function(e){
+				      num1 = salida.textContent;
+				      operacion = "+";
+				      limpiar();
+				  }
+				  resta.onclick = function(e){
+				      num1 = salida.textContent;
+				      operacion = "-";
+				      limpiar();
+				  }
+				  multiplicacion.onclick = function(e){
+				      num1 = salida.textContent;
+				      operacion = "*";
+				      limpiar();
+				  }
+				  division.onclick = function(e){
+				      num1 = salida.textContent;
+				      operacion = "/";
+				      limpiar();
+				  }
+				  igual.onclick = function(e){
+				      num2 = salida.textContent;
+				      resolver();
+				  }
+
+				function limpiar(){
+				  salida.textContent = "";
+				}//función de limpiado tras pulsar el signo de operación
+
+				function resetear(){
+				  salida.textContent = "";
+				  num1 = 0;
+				  num2 = 0;
+				  operacion = "";
+				}//función de reset (c)
+
+				function resolver(){
+				  var res = 0;
+				  switch(operacion){
+				    case "+":
+				      res = parseFloat(num1) + parseFloat(num2);
+				      break;
+				    case "-":
+				        res = parseFloat(num1) - parseFloat(num2);
+				        break;
+				    case "*":
+				      res = parseFloat(num1) * parseFloat(num2);
+				      break;
+				    case "/":
+				      res = parseFloat(num1) / parseFloat(num2);
+				      break;
+				  } //se ejecuta al dar a igual
+				  resetear();
+				  salida.textContent = res;
+				}
+
+			</script>
+
+		<!------------------------------------------------------------------->
+
+</body>
+</html>
