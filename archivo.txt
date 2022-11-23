@@ -1,0 +1,3 @@
+Esto es un archivo de prueba
+Tenemos que leer el archivo
+El archivo tiene varias cadenas
