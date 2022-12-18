@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        fieldset{
+            background-color: #E6E6FF;
+            border: #8686FF solid 3px;
+            padding: 1.5em;
+        }
+        legend{
+            padding-left: 1em;
+            padding-right: 1em;
+            border: #8686FF solid 3px;
+            background-color: white;
+        }
+        #centro{
+            width: 9em;
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+        #centro p{
+            display: inline-block;
+            width: 3em;
+            margin: 3px;
+        }
+        .lab{
+            font-weight: bold;
+        }
+
+        input[type=number]{
+            width: 2em;
+        }
+        input[type=submit],input[type=reset]{
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <form action="e1.php">
+        <fieldset>
+            <legend>Formulario</legend>
+            <div>Escriba el alto y ancho (0 < números <= 100) y mostraré un rectáncgulo de estrellas de ese tamaño.</div>
+            <div id="centro">
+                <p class="lab">Ancho:</p>
+                <p><input type="number" name="ancho" id=""></p>
+                <p class="lab">Alto:</p>
+                <p><input type="number" name="alto" id=""></p>
+            </div>
+            <input type="submit" value="Dibujar">
+            <input type="reset" value="Borrar">
+        </fieldset>
+    </form>
+</body>
+</html>

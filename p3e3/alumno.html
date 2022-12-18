@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio3</title>
+    <style>
+        body{
+            width: 50em;
+        }
+        fieldset{
+            padding:0;
+            margin:0;
+            border: solid 0.1em black;
+           
+        }
+        fieldset div{
+            margin-right: 2em;
+            margin-bottom: 1em;
+            width: fit-content;
+            display: inline-block;
+            
+        }
+        fieldset div p{
+            margin:0;
+            display: inline-block;
+            /* background-color: red; */
+            font-display: inline;
+            width: 10em;
+        }
+        #radios{
+            width: 22em;
+        }
+        
+    </style>
+</head>
+<body>
+    <form action="datos_alumno.php" method="post">
+        <fieldset>
+        <div>DATOS DEL ALUMNO:</div><br>
+        <div>Introduzca su nombre:</div>
+        <div><input type="text" name="nombre" id=""></div>
+        <div id="radios"><p align="right">Enseñanza:</p><br>
+        <p><input type="radio" name="estudios" id="" value="sec">Secundaria</p>
+        <p><input type="radio" name="estudios" id="" value="bach">Bachiller</p>
+        <p><input type="radio" name="estudios" id="" value="med">Ciclo Medio</p>
+        <p><input type="radio" name="estudios" id="" value="sup">Ciclo Superior</p>
+        </div>
+        <div>Introduzca su teléfono:</div>
+        <div><input type="number" name="tel" id=""></div>
+        <div>Matriculado <input type="checkbox" name="matriculado" id=""></div>
+        <br>
+        <div>Mostrar datos:</div>
+        <div><select name="formato" id="">
+            <option value="pantalla">Por pantalla</option>
+            <option value="guardar">En archivo de datos</option>
+        </select></div>
+    </fieldset>
+        <input type="submit" value="Enviar datos">
+
+    </form>
+</body>
+</html>
