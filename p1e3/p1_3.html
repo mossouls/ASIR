@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p1_3</title>
+    <style>
+        @font-face {
+        font-family: 'fontawesome';
+        src:  url('fontawesome-webfont.woff') format('woff'),
+        url('fontawesome-webfont.woff') format('woff');
+        }
+
+        html{
+            background-color: #FDB64C;
+            font-family: 'fontawesome', Fallback, sans-serif;
+            font-size: 1vw;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #cabecera{
+            margin-top: 3px;
+            color:#E25100;
+            background-color: white;
+            font-size: 2vw;
+            font-weight: bold;
+            border-top: 3px #E25100 solid;
+            border-bottom: 3px #E25100 solid;
+            height: fit-content;
+        }
+        #cabecera div{
+            float: right;
+            font-size: 1vw;
+            margin:0;
+            padding:0;
+        }
+
+        #cabecera div p{
+            margin: 0;
+            padding: 0;
+            color: black;
+        }
+
+        section{
+            background-color: white;
+            float: left;
+            width: 37%;
+            height: 30vw;
+            margin:1vw;
+        }
+
+        .titulo{
+            background-color: #E25100;
+            color: white;
+            font-size: 1.5vw;
+        }
+
+        img{
+            margin: 0.2vw;
+            border-top: #E25100 3px solid;
+            border-bottom: #E25100 3px solid;
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+
+        }
+
+        p{
+            margin-top: 0;
+            margin-left: 0.2vw;
+            margin-right: 0.2vw;
+            text-align: justify;
+        }
+
+        #s3{
+            overflow-y:auto;
+        }
+
+        #s1 img{
+            float: right;
+        }
+
+        #s2 img{
+            float: left;
+        }
+
+        #s3 img{
+            margin-left: 3.5vw;
+        }
+
+        .redd{
+            color: darkred;
+            font-size: 1.5vw;
+        }
+
+        .inf{
+            font-variant: small-caps;
+            font-size: 1.5vw;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="cabecera">
+        Escritorio vs móviles
+        <div>
+            <p>Autor: Rafael</p>
+            <p>Fecha: 18/09/2022</p>
+        </div>
+    </div>
+
+    <section id="s1">
+        <div class="titulo">
+            Los móviles, el nuevo ordenador
+        </div>
+        <img src="gartner.png" alt="">
+        <div>   
+            <p>La segunda década del siglo XXI está siendo la década de la <span class="inf">informática móvil</span> y el protagonista principal está siendo el smartphone, el teléfono móvil inteligente.</p>  
+            <p>Las ventas anuales mundiales de los últimos años y las previsiones para los próximos años publicados por la consultora <b><i>Gartner</i></b> explican claramente porque los móviles son cada vez más importantes frente a los PCs</p>
+        </div>
+    </section>
+
+    <section id="s2">
+        <div class="titulo">
+            El acceso a la web
+        </div>
+        <p>El cambio de una informática de escritorio a una informática móvil se refleja en las estadísticas de visitas a los sitios web. Según la empresa <i><b>NetMarketShare</b></i>, casi <span class="redd">uno de cada tres usuarios</span> accederían ya a la web desde un dispositivo móvil.</p>
+        <img src="netapplications.png" alt="">
+        <p>Dada la dificultad de recopilar este tipo de información, lo importante en este gráfico es la tendencia, más que los valores en sí.</p>
+    </section>
+    <section id="s3" >
+        <div class="titulo">
+            Los datos de Wikipedia
+        </div>
+        <p>Desde mayo de 2015, <i><b>Wikimedia</b></i>  publica en <a href="https://analytics.wikimedia.org/">https://analytics.wikimedia.org/</a> estadísticas muy detalladas de sus logs de acceso. En el caso de las webs de Wikimedia, durante el último año <span class="redd">la mitad de las visitas</span> se producen desde ordenadores de escritorio y la otra mitad desde dispositivos móviles, aunque por tratarse de un período muy corto (un año), es difícil detectar tendencias en este gráfico. </p>
+        <img src="wikimedia.png" alt="">
+    </section>
+    
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p1_2b</title>
+    <style>
+        html{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5vw;
+        }
+
+        form fieldset{
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #EFEFEF;
+            border: #565656 2px solid;
+        }
+        form p{
+            margin: 0.5vw;
+            font-weight: bold;
+        }
+
+        input[type=text]{
+            border-bottom:lightgrey 1px solid;
+            border-top:grey 1px solid;
+            border-left:lightgrey 1px solid;
+            border-right:grey 1px solid;
+            height: 1.5vw;
+        }
+
+        input[type=date]{
+            border-bottom:lightgrey 1px solid;
+            border-top:grey 1px solid;
+            border-left:lightgrey 1px solid;
+            border-right:grey 1px solid;
+            height: 1.5vw;
+        }
+
+        input[type=time]{
+            border-bottom:lightgrey 1px solid;
+            border-top:grey 1px solid;
+            border-left:lightgrey 1px solid;
+            border-right:grey 1px solid;
+            height: 1.5vw;
+        }
+
+        span{
+            font-weight: normal;
+            color: grey;
+        }
+
+        #mail{
+            background-image:url(mail.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: left;
+        }
+
+        form button{
+            margin-top: 2vw;
+            border-radius: 1.5vw;
+            font-size: 1.5vw;
+            background: rgb(140,137,137);
+            background: linear-gradient(90deg, rgb(216, 215, 215) 13%, rgba(233,233,233,1) 47%, rgb(225, 225, 225) 90%);
+            border: grey 2px solid;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <p>Name:
+                <input type="text" name="" id="" style="width: 35%;">
+            </p>
+            
+            <p>E-mail:
+                <input type="text" name="" id="mail" style="width: 45%;">
+            </p> 
+            
+            <p>Phone:
+                <input type="text" name="" id="" style="width: 35%;">
+            </p> 
+            
+            <p>Callback on:
+                <input type="date">
+                <input type="time" name="" id="">
+                <span>UTC</span>
+            </p> 
+
+            <p>Priority:
+                <input type="range" name="" id="" min="0" max="5">
+            </p>
+
+            <button>Request Call</button>
+            
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P1_2a</title>
+	<style type="text/css">
+
+		html{
+			font-family: arial;
+			font-size: 1.5vw;
+			background-color: #FAFAFA;
+		}
+
+		h1{
+			text-align: center;
+			background-color: #EAEAEA;
+			font-size: 1.5vw;
+			font-weight: bold;
+		}
+
+		form fieldset{
+			margin: auto;
+			background-color: #EFEFEF;
+			border: solid 2px #A5A5A5;
+		}
+
+		form legend{
+			background-color: #FDFDFD;
+			border: 2px solid #EEEEEE; 
+		}
+
+
+		p{
+			width: 49%;
+			display: inline-block;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+		input[type=text]{
+  		border-top: 1px solid #A5A5A5;
+		border-bottom: none;
+		border-left: none;
+		border-right: none;
+		border-radius: 1px;
+		height: 1.8vw;
+		}
+		
+
+		#sec1{
+			width: 70%;
+			float: left;
+			padding-right: 0;
+		}
+
+		#dom{
+			position: relative;
+			left: -23vw;
+		}
+
+		#sec2{
+			width: 30%;
+			float: left;
+
+		}
+
+		#sec2 p{
+			display: block;
+			width: 100%;
+		}
+
+		#sec2 input{
+			margin-bottom: 0;
+		}
+
+		span{
+			color: darkred;
+			text-decoration: underline;
+		}
+
+		button{
+			float: right;
+			margin:0.2vw;
+			font-size: 1.5vw;
+			border:solid 1px lightgray;
+			background: rgb(239,239,239);
+			background: linear-gradient(180deg, rgba(239,239,239,1) 13%, rgba(210,210,210,1) 47%);
+		}
+
+
+	</style>
+</head>
+
+<body>
+	<h1>EJEMPLO DE FORMULARIO</h1>
+	<form>
+		<fieldset>
+			<legend>Datos personales</legend>
+			<section id="sec1">
+
+					<p><span>A</span>pellidos:</p>
+					<p>N<span>o</span>mbre:</p>
+					<p><input type="text" name="apellidos" id="" style="width: 90%;"></p>
+					<p><input type="text" name="" id="" style="width: 85%;"></p>
+					<p><span>N</span>acido en:</p>
+					<p>Provincia:</p>
+					<p><input type="text" name="" id="" style="width: 70%;"></p>
+					<p>
+						<select name="" id="">
+							<option value="">Valencia</option>
+							<option value="">Madrid</option>
+							<option value="">Jaén</option>
+							<option value="">Ourense</option>
+						</select>
+					</p>
+
+					<div>
+						<p>Do<span>m</span>icilio</p>
+					</div>
+					<div>
+						<p>
+							<select name="" id="">
+								<option value=""> </option>
+								<option value="">Calle</option>
+								<option value="">Rotonda</option>
+								<option value="">Avenida</option>
+							</select>
+							
+						</p>
+						<p id="dom"><input type="text" name="" id="" size="60"></p>
+						
+					</div>
+
+					<p><span>L</span>ocalidad:</p>
+					
+
+					<p>Provincia:</p>
+					<p><input type="text" name="" id="" style="width: 80%;"></p>
+					<p>
+						<select name="" id="">
+							<option value="">Valencia</option>
+							<option value="">Madrid</option>
+							<option value="">Jaén</option>
+							<option value="">Ourense</option>
+						</select>
+					</p>
+
+			</section>
+
+			<section id="sec2">
+
+					<p><span>D</span>NI:</p>
+					<p><input type="text" name="" id="" style="width: 40%;"></p>
+
+					<p><span>F</span>echa nacimiento (dd/mm/aaaa):</p>
+					<p><input type="text" name="" id="" style="width: 40%;"></p>
+
+					<p><span>C</span>ódigo postal:</p>
+					<p><input type="text" name="" id="" style="width: 25%;"></p>
+
+					<p><span>T</span>eléfono:</p>
+					<p><input type="text" name="" id="" style="width: 35%;"></p>
+
+			</section>
+
+			<button>Borrar todo</button>
+			<button>Envíar</button>
+		</fieldset>
+	</form>
+</body>
+</html>
