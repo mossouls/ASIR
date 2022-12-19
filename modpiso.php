@@ -11,9 +11,9 @@
     <?php
             $cod_piso=$_GET["cod"];
             //conectamos a la base de datos
-            $conexion=mysqli_connect("localhost","root","rootroot");
+            $conexion=mysqli_connect("localhost","root","rootroot") or die ("Imposible conectar al servidor.");
             //seleccionamos la base de datos
-            mysqli_select_db($conexion,"inmobiliaria");
+            mysqli_select_db($conexion,"inmobiliaria") or die ("Imposible acceder a la base de datos.");
             $query="select nombres from usuario";
             $real_query=mysqli_query($conexion,$query);
         
@@ -85,7 +85,7 @@
             //si el fichero excede el tamaño debido
             elseif ($_FILES["nueva_imagen"]["error"]==UPLOAD_ERR_FORM_SIZE) {
                 $maxsize=$_REQUEST["MAX_FILE_SIZE"];
-                $errores=$errores . "<tr><td><b>El tamaño del fichero subido supera el límite permitido ($maxsize bytes)</b></td></tr>\n"; //mostramos mensaje de error
+                $errores=$errores . "<p class='msg'><b>El tamaño del fichero subido supera el límite permitido ($maxsize bytes)</b></td></tr></table>\n"; //mostramos mensaje de error
                 $nombre_fichero=''; //borramos el nombre del fichero que no se debe subir a causa del error
             }
 
@@ -96,13 +96,13 @@
             }
             //si no se ha subido ningún fichero
             else {
-                $errores=$errores . "<tr><td><b>No se ha podido subir el fichero</b></td></tr>\n";
+                $errores=$errores . "<p class='msg'><b>No se ha podido subir el fichero</b></p>>\n";
                 $nombre_fichero='';
             }
 
             //mostramos los errores si los hay
             if ($errores != "") {
-                print "<tr><td><b>No se ha podido realizar la inserción debido a los siguientes errores:</b></td></tr>";
+                print "<p class='msg'><b>No se ha podido realizar la inserción debido a los siguientes errores:</b></p>";
                 print "<ul>";
                 print "$errores";
                 print "</ul>";
@@ -112,61 +112,61 @@
                 move_uploaded_file($_FILES["nueva_imagen"]["tmp_name"],$dir_fichero.$nombre_fichero);
                 mysqli_query($conexion,"update pisos set imagen = '$nueva_imagen' where codigo_piso like $cod_piso");
                 print "<br>";
-                print "<tr><td><b>Imagen modificada</b></td></tr>";
+                print "<p class='msg'><b>Imagen modificada</b></p>";
             }
 
             if (!empty($nueva_calle)) {
                 mysqli_query($conexion,"update pisos set calle = '$nueva_calle' where codigo_piso like $cod_piso");
                 print "<br>";
-                print "<tr><td><b>Calle modificada</b></td></tr>";
+                print "<p class='msg'><b>Calle modificada</b></p>";
             }
 
             if (!empty($nuevo_numero)) {
                 mysqli_query($conexion,"update pisos set numero = '$nuevo_numero' where codigo_piso like $cod_piso");
                 print "<br>";
-                print "<tr><td><b>Número modificada</b></td></tr>";
+                print "<p class='msg'><b>Número modificada</b></p>";
             }
 
             if (!empty($nuevo_piso)) {
                 mysqli_query($conexion,"update pisos set piso = '$nuevo_piso' where codigo_piso like $cod_piso");
                 print "<br>";
-                print "<tr><td><b>Planta modificada</b></td></tr>";
+                print "<p class='msg'><b>Planta modificada</b></p>";
             }
 
             if (!empty($nueva_puerta)) {
                 mysqli_query($conexion,"update pisos set puerta = '$nueva_puerta' where codigo_piso like $cod_piso");
                 print "<br>";
-                print "<tr><td><b>Puerta modificada</b></td></tr>";
+                print "<p class='msg'><b>Puerta modificada</b></p>";
             }
 
             if (!empty($nuevo_cp)) {
                 mysqli_query($conexion,"update pisos set cp = '$nuevo_cp' where codigo_piso like $cod_piso");
                 print "<br>";
-                print "<tr><td><b>Código postal modificado</b></td></tr>";
+                print "<p class='msg'><b>Código postal modificado</b></p>";
             }
 
             if (!empty($nuevo_metros)) {
                 mysqli_query($conexion,"update pisos set metros = '$nuevo_metros' where codigo_piso like $cod_piso");
                 print "<br>";
-                print "<tr><td><b>Dimensiones modificadas</b></td></tr>";
+                print "<p class='msg'><b>Dimensiones modificadas</b></p>";
             }
 
             if (!empty($nueva_zona)) {
                 mysqli_query($conexion,"update pisos set zona = '$nueva_zona' where codigo_piso like $cod_piso");
                 print "<br>";
-                print "<tr><td><b>Zona modificada</b></td></tr>";
+                print "<p class='msg'><b>Zona modificada</b></p>";
             }
 
             if (!empty($nuevo_precio)) {
                 mysqli_query($conexion,"update pisos set precio = '$nuevo_precio' where codigo_piso like $cod_piso");
                 print "<br>";
-                print "<tr><td><b>Precio modificado</b></td></tr>";
+                print "<p class='msg'><b>Precio modificado</b></p>";
             }
 
             if (!empty($nuevo_propietario)) {
                 mysqli_query ($conexion,"update pisos set usuario_id = (select usuario_id from usuario where nombres like '$nuevo_propietario') where codigo_piso like $cod_piso");
                 print "<br>";
-                print "<tr><td><b>Propietario modificado</b></td></tr>";
+                print "<p class='msg'><b>Propietario modificado</b></p>";
             }
             mysqli_close($conexion);
         }

@@ -10,9 +10,9 @@
 <body>
     <?php
         //conexion al servidor
-        $conexion=mysqli_connect("localhost","root","rootroot");
+        $conexion=mysqli_connect("localhost","root","rootroot") or die ("Imposible conectar al servidor.");
         //seleccion de la BD
-        mysqli_select_db($conexion,"inmobiliaria");
+        mysqli_select_db($conexion,"inmobiliaria") or die ("Imposible acceder a la base de datos.");
         //obtenemos los campos de la tabla pisos por los que buscaremos:
         $query_campos="show columns from pisos where Field like 'codigo_piso' or Field like 'zona' or Field like 'cp' or Field like 'calle'";
         $consulta_campos=mysqli_query($conexion,$query_campos);

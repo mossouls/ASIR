@@ -30,9 +30,9 @@
   
 
         if (mysqli_query($conexion,$query)) {
-            echo "Usuario añadido correctamente";
+            echo "<p class='msg'><b>Usuario añadido correctamente</b></p>";
         }else{
-            echo "Error en la adición de usuario";
+            echo "<p class='msg'><b>Error en la adición de usuario</b></p>";
         }
 
         print "<br>";

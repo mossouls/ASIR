@@ -32,9 +32,9 @@
         if (isset($_REQUEST["modificar"])) {
             $cod=strip_tags(trim($_REQUEST["cod"]));
             #abrimos conexión al servidor
-            $conexion=mysqli_connect("localhost","root","rootroot");
+            $conexion=mysqli_connect("localhost","root","rootroot") or die ("Imposible conectar al servidor.");
             #seleccionamos la base de datos
-            mysqli_select_db($conexion,"inmobiliaria");
+            mysqli_select_db($conexion,"inmobiliaria") or die ("Imposible acceder a la base de datos.");
             #realizamos la consulta
             $query="select * from pisos where codigo_piso like '$cod'";
             $consulta=mysqli_query($conexion,$query);

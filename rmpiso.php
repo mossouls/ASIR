@@ -17,7 +17,20 @@
         if (isset($_REQUEST["eliminar"])) {
             $cod_piso=strip_tags(trim($_REQUEST["cod_piso"]));
             #conectamos al servidor
-            $conexion=mysqli_connect("localhost","root","rootroot");
+            $conexion=mysqli_connect("localhost","root","rootroot") or die ("Imposible conectar al servidor.");
+            #seleccionamos la BD
+            mysqli_select_db($conexion,"inmobiliaria") or die ("No se puede acceder a la base de datos");
+            #realizamos la consulta sobre el código
+            $query="select * from pisos where codigo_piso = $cod_piso";
+            $consulta=mysqli_query($conexion,$query);
+            #obtenemos las lineas
+            $lineas=mysqli_num_rows($consulta);
+            if ($lineas!=0) {
+                header("Location:delpiso.php?cod=$cod_piso");
+            }else{
+                print "<br>";
+                print "<table><tr><td><b>No se encontraron coincidencias</b></td></tr></table>";
+            }
         }
     ?>
 </body>

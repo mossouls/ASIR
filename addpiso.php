@@ -10,10 +10,10 @@
 
     <?php
     #establecemos la conexión con la base de datos
-    $conexion=mysqli_connect("localhost","root","rootroot");
+    $conexion=mysqli_connect("localhost","root","rootroot") or die ("Imposible conectar al servidor.");
 
     #seleccionamos nuestra BD
-    mysqli_select_db($conexion,"inmobiliaria");
+    mysqli_select_db($conexion,"inmobiliaria") or die ("imposible acceder a la base de datos");
 
     #seleccionamos los propietarios posibles
     $query="select nombres from usuario";
@@ -171,11 +171,11 @@
                         mysqli_query ($conexion,"update pisos set zona = '$zona' where codigo_piso like '$cod_piso'");
                         mysqli_query ($conexion,"update pisos set usuario_id = (select usuario_id from usuario where nombres like '$propietario') where codigo_piso like '$cod_piso'");
                         print "<br>";
-                        print "<tr><td><b>Piso registrado con éxito.</b></td></tr>";
+                        print "<p class='msg'><b>Piso registrado con éxito.</b></p>";
                         
                 }else {
                     print "<br>";
-                    print "<tr><td><b>Ese piso ya está registrado en la base de datos. No se añadirá.</b></td></tr>";
+                    print "<p class='msg'><b>Ese piso ya está registrado en la base de datos. No se añadirá.</b></p>";
                 }
                            
             }
