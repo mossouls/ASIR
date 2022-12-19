@@ -1,0 +1,46 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+td{
+    padding: 0.5em;
+    text-align: center;
+}
+
+table{
+    border: purple 2px solid;
+    table-layout: fixed;
+}
+
+table tr{
+    background-color: rgb(199, 157, 199);
+}
+
+.piso{
+    background-color: rgb(199, 157, 199);
+}
+
+.us{
+    background-color: rgb(245, 115, 245);
+}
+
+#volver{
+    background-color: rgb(199, 157, 199);
+    padding: 0.5em;
+    margin:1em;
+
+}
+
+input[type=submit]{
+    padding: 1em;
+    text-decoration: none;
+    border:solid 2px rgb(199, 157, 199);
+    background-color: white;
+    font-size: 1em;
+    margin: 0.5em;
+
+}
+
+input[type=submit]:hover{
+    background-color: rgb(199, 157, 199);
+}
