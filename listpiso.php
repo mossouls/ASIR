@@ -25,6 +25,8 @@
     #comprobamos si hay datos
     if ($lineas_pisos==0) {
         print "<table><tr><td>En este momento no hay datos de pisos registrados</td></tr></table>";
+        print "<br>";
+        print "<a id='volver' href='inicio.html'>Volver al inicio</a>";
     }else {
         
         
@@ -51,8 +53,10 @@
             
             print "<tr><td><b>Nombre del propietario</b></td><td>". $array_propietario["nombres"] ."</td></tr>";
             print "</table>";
-            print "<br>";
+
         }
+        print "<br>";
+        print "<a id='volver' href='inicio.html'>Volver al inicio</a>";
 
     }
 ?>

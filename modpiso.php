@@ -26,9 +26,9 @@
                 }
 
     ?>
-    <form action="modpiso.php" method="GET">
+    <form action="modpiso.php" method="post" enctype="multipart/form-data">
         <h1>Modificar datos</h1>
-        <input type="hidden" name="cod_piso" value=<?php print "$cod_piso" ?>>
+        <input type="hidden" name="cod_piso" value=<?php print "$cod_piso" ?>
         <p>Introduce una nueva calle  <input type="text" name="nueva_calle"></p>
         <p>Introduce un nuevo número <input type="number" name="nuevo_numero"></p>
         <p>Introduce un nuevo piso <input type="text" name="nuevo_piso"></p>
@@ -62,6 +62,7 @@
             $nuevo_metros=$_REQUEST["nuevo_metros"];
             $nuevo_cp=$_REQUEST["nuevo_cp"];
             $nueva_zona=strip_tags(trim($_REQUEST["nueva_zona"]));
+            $nueva_imagen=$_FILES["nueva_imagen"];
             $nuevo_precio=$_REQUEST["nuevo_precio"];
             $nuevo_propietario=strip_tags(trim($_REQUEST["nuevo_propietario"]));
             $copiar_fichero=false;
@@ -110,7 +111,7 @@
 
             if ($copiar_fichero==true) {
                 move_uploaded_file($_FILES["nueva_imagen"]["tmp_name"],$dir_fichero.$nombre_fichero);
-                mysqli_query($conexion,"update pisos set imagen = '$nueva_imagen' where codigo_piso like $cod_piso");
+                mysqli_query($conexion,"update pisos set imagen = '$nombre_fichero' where codigo_piso like $cod_piso");
                 print "<br>";
                 print "<p class='msg'><b>Imagen modificada</b></p>";
             }
